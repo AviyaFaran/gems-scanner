@@ -7,9 +7,10 @@ Read ALL .txt files from the `watchlists/` folder. Each file is a watchlist.
 Parsing rules:
 - Tickers are comma-separated or newline-separated
 - Strip exchange prefix: `NASDAQ:NVDA` → `NVDA`, `NYSE:AAPL` → `AAPL`
+- Convert ALL tickers to UPPERCASE after stripping prefix (e.g. `nvda` → `NVDA`, `Dash` → `DASH`)
 - Skip tokens starting with `###`
 - Skip non-US exchanges: LSE:, EURONEXT:, TSX:, COINBASE:, SEED_
-- DEDUPLICATE across all files — scan each ticker once, note which lists it appears in
+- DEDUPLICATE across ALL files AND within each file — scan each ticker exactly once, note which lists it appears in
 
 Announce: `🔍 נטענו X רשימות | Y מניות ייחודיות לסריקה`
 
